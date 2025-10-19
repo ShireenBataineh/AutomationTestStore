@@ -1,28 +1,40 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="3" passed="3" failed="0" skipped="0">
+<testng-results ignored="0" total="5" passed="5" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2025-10-19T16:50:46 EET" name="Default suite" finished-at="2025-10-19T16:51:03 EET" duration-ms="16545">
+  <suite started-at="2025-10-19T18:13:06 EET" name="Default suite" finished-at="2025-10-19T18:13:27 EET" duration-ms="21641">
     <groups>
     </groups>
-    <test started-at="2025-10-19T16:50:46 EET" name="Default test" finished-at="2025-10-19T16:51:03 EET" duration-ms="16545">
+    <test started-at="2025-10-19T18:13:06 EET" name="Default test" finished-at="2025-10-19T18:13:27 EET" duration-ms="21641">
       <class name="Login.TestCase">
-        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Login.TestCase@65fe9e33]" started-at="2025-10-19T16:50:46 EET" name="beforeTest" finished-at="2025-10-19T16:50:48 EET" duration-ms="2315" status="PASS">
+        <test-method is-config="true" signature="beforeTest()[pri:0, instance:Login.TestCase@26bab2f1]" started-at="2025-10-19T18:13:06 EET" name="beforeTest" finished-at="2025-10-19T18:13:08 EET" duration-ms="1980" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- beforeTest -->
-        <test-method signature="signUp()[pri:1, instance:Login.TestCase@65fe9e33]" started-at="2025-10-19T16:50:48 EET" name="signUp" finished-at="2025-10-19T16:50:59 EET" duration-ms="10579" status="PASS">
+        <test-method signature="signUp()[pri:1, instance:Login.TestCase@26bab2f1]" started-at="2025-10-19T18:13:08 EET" name="signUp" finished-at="2025-10-19T18:13:14 EET" duration-ms="6028" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- signUp -->
-        <test-method signature="Logout()[pri:2, instance:Login.TestCase@65fe9e33]" started-at="2025-10-19T16:50:59 EET" name="Logout" finished-at="2025-10-19T16:51:01 EET" duration-ms="2339" status="PASS">
+        <test-method signature="Logout()[pri:2, instance:Login.TestCase@26bab2f1]" started-at="2025-10-19T18:13:14 EET" name="Logout" finished-at="2025-10-19T18:13:17 EET" duration-ms="2569" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- Logout -->
-        <test-method signature="login()[pri:3, instance:Login.TestCase@65fe9e33]" started-at="2025-10-19T16:51:01 EET" name="login" finished-at="2025-10-19T16:51:03 EET" duration-ms="1156" status="PASS">
+        <test-method signature="login()[pri:3, instance:Login.TestCase@26bab2f1]" started-at="2025-10-19T18:13:17 EET" name="login" finished-at="2025-10-19T18:13:19 EET" duration-ms="2150" status="PASS">
           <reporter-output>
           </reporter-output>
         </test-method> <!-- login -->
+        <test-method signature="addToCart()[pri:4, instance:Login.TestCase@26bab2f1]" started-at="2025-10-19T18:13:19 EET" name="addToCart" finished-at="2025-10-19T18:13:22 EET" duration-ms="3431" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- addToCart -->
+        <test-method signature="Checkout()[pri:5, instance:Login.TestCase@26bab2f1]" started-at="2025-10-19T18:13:22 EET" name="Checkout" finished-at="2025-10-19T18:13:27 EET" duration-ms="5167" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Checkout -->
+        <test-method is-config="true" signature="Close()[pri:0, instance:Login.TestCase@26bab2f1]" started-at="2025-10-19T18:13:27 EET" name="Close" finished-at="2025-10-19T18:13:27 EET" duration-ms="171" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- Close -->
       </class> <!-- Login.TestCase -->
     </test> <!-- Default test -->
   </suite> <!-- Default suite -->

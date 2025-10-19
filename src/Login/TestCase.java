@@ -162,7 +162,35 @@ public class TestCase {
 		loginButton.click();
 	}
 	
-	@AfterTest(enabled = false)
+	@Test(priority=4)
+	public void addToCart()
+	{
+		driver.navigate().to("https://automationteststore.com/");
+		WebElement prod1=driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/a[1]"));
+		prod1.click();
+//		WebElement prod2=driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/section[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/a[1]"));
+//		prod2.click();
+		driver.findElement(By.xpath("//section[@id='bestseller']//div[2]//div[2]//a[1]//img[1]")).click();
+		WebElement radioBut=driver.findElement(By.id("option344750"));
+		radioBut.click();
+		WebElement prod2=driver.findElement(By.xpath("//a[normalize-space()='Add to Cart']"));
+		prod2.click();
+	}
+	
+	@Test(priority=5)
+	public void Checkout() throws InterruptedException
+	{
+		WebElement checkout=driver.findElement(By.id("cart_checkout1"));
+		checkout.click();
+		WebElement confirmOrder=driver.findElement(By.id("checkout_btn"));
+		confirmOrder.click();
+		Thread.sleep(1000);
+		WebElement Continue=driver.findElement(By.cssSelector(".fa.fa-arrow-right"));
+		Continue.click();
+		
+	}
+	
+	@AfterTest(enabled = true)
 	public void Close()
 	{
 		driver.close();
