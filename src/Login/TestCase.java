@@ -26,7 +26,7 @@ public class TestCase {
 		driver.manage().window().maximize();
 	}
 	
-	@Test(priority=1)
+	@Test
 	public void signUp() throws InterruptedException
 	{
 //		WebElement signUp=driver.findElement(By.id("customer_menu_top"));
@@ -68,7 +68,6 @@ public class TestCase {
 		int num4=rand.nextInt(City.length);
 		WebElement cityInput=driver.findElement(By.id("AccountFrm_city"));
 		cityInput.sendKeys(City[num4]);
-		
 		
 		
 		//Country
@@ -119,7 +118,7 @@ public class TestCase {
 		
 	}
 	
-	@AfterTest(enabled = false)
+	@AfterTest(enabled = true)
 	public void Close()
 	{
 		driver.close();
