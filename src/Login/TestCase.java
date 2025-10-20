@@ -168,6 +168,7 @@ public class TestCase {
 	{
 		driver.navigate().to("https://automationteststore.com/");
 		
+		//Specific Items
 //		WebElement prod1=driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/a[1]"));
 //		prod1.click();
 //		driver.findElement(By.xpath("//section[@id='bestseller']//div[2]//div[2]//a[1]//img[1]")).click();
@@ -176,11 +177,13 @@ public class TestCase {
 //		WebElement prod2=driver.findElement(By.xpath("//a[normalize-space()='Add to Cart']"));
 //		prod2.click();
 		
+		//Random Items
 		List <WebElement> products1=driver.findElements(By.className("prdocutname"));
 		int size=products1.size();
 		int randomSize=rand.nextInt(size);
 		products1.get(randomSize).click();
 		WebElement div=driver.findElement(By.className("tab-content"));
+		
 		if(div.getText().contains("Out of Stock"))
 			driver.navigate().back();
 		else
@@ -201,7 +204,7 @@ public class TestCase {
 		
 	}
 	
-	@AfterTest(enabled = false)
+	@AfterTest(enabled = true)
 	public void Close()
 	{
 		driver.close();

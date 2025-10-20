@@ -5,6 +5,7 @@
     <classes>
       <class name="Login.TestCase">
         <methods>
+          <include name="Logout"/>
           <include name="Checkout"/>
           <include name="beforeTest"/>
           <include name="Close"/>
