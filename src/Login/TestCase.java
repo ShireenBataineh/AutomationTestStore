@@ -1,5 +1,6 @@
 package Login;
 
+import java.util.List;
 import java.util.Random;
 
 import org.openqa.selenium.By;
@@ -162,35 +163,45 @@ public class TestCase {
 		loginButton.click();
 	}
 	
-	@Test(priority=4)
+	@Test(priority=4, invocationCount = 11)
 	public void addToCart()
 	{
 		driver.navigate().to("https://automationteststore.com/");
-		WebElement prod1=driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/a[1]"));
-		prod1.click();
-//		WebElement prod2=driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/section[4]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/a[1]"));
+		
+//		WebElement prod1=driver.findElement(By.xpath("//body[1]/div[1]/div[2]/div[1]/div[1]/section[3]/div[1]/div[1]/div[1]/div[1]/div[2]/div[3]/a[1]"));
+//		prod1.click();
+//		driver.findElement(By.xpath("//section[@id='bestseller']//div[2]//div[2]//a[1]//img[1]")).click();
+//		WebElement radioBut=driver.findElement(By.id("option344750"));
+//		radioBut.click();
+//		WebElement prod2=driver.findElement(By.xpath("//a[normalize-space()='Add to Cart']"));
 //		prod2.click();
-		driver.findElement(By.xpath("//section[@id='bestseller']//div[2]//div[2]//a[1]//img[1]")).click();
-		WebElement radioBut=driver.findElement(By.id("option344750"));
-		radioBut.click();
-		WebElement prod2=driver.findElement(By.xpath("//a[normalize-space()='Add to Cart']"));
-		prod2.click();
+		
+		List <WebElement> products1=driver.findElements(By.className("prdocutname"));
+		int size=products1.size();
+		int randomSize=rand.nextInt(size);
+		products1.get(randomSize).click();
+		WebElement div=driver.findElement(By.className("tab-content"));
+		if(div.getText().contains("Out of Stock"))
+			driver.navigate().back();
+		else
+			driver.findElement(By.xpath("//a[normalize-space()='Add to Cart']")).click();
+		
 	}
 	
-	@Test(priority=5)
+	@Test(priority=5, enabled=true)
 	public void Checkout() throws InterruptedException
 	{
 		WebElement checkout=driver.findElement(By.id("cart_checkout1"));
 		checkout.click();
 		WebElement confirmOrder=driver.findElement(By.id("checkout_btn"));
 		confirmOrder.click();
-		Thread.sleep(1000);
-		WebElement Continue=driver.findElement(By.cssSelector(".fa.fa-arrow-right"));
+		Thread.sleep(2000);
+		WebElement Continue=driver.findElement(By.cssSelector(".btn.btn-default.mr10"));
 		Continue.click();
 		
 	}
 	
-	@AfterTest(enabled = true)
+	@AfterTest(enabled = false)
 	public void Close()
 	{
 		driver.close();
