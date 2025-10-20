@@ -41,7 +41,7 @@ public class TestCase {
 		driver.manage().window().maximize();
 	}
 	
-	@Test(priority=1)
+	@Test(priority=1, enabled=true)
 	public void signUp() throws InterruptedException
 	{
 //		WebElement signUp=driver.findElement(By.id("customer_menu_top"));
@@ -183,8 +183,16 @@ public class TestCase {
 		int randomSize=rand.nextInt(size);
 		products1.get(randomSize).click();
 		WebElement div=driver.findElement(By.className("tab-content"));
-		
-		if(div.getText().contains("Out of Stock"))
+		WebElement radioContainer = driver.findElement(By.className("control-label"));
+
+	    // Check if the radio container is displayed
+	    if (radioContainer.isDisplayed()) {
+	        WebElement radioButton = driver.findElement(By.id("option344750"));
+	        radioButton.click();
+			driver.findElement(By.xpath("//a[normalize-space()='Add to Cart']")).click();
+}
+
+	        else if(div.getText().contains("Out of Stock"))
 			driver.navigate().back();
 		else
 			driver.findElement(By.xpath("//a[normalize-space()='Add to Cart']")).click();
@@ -194,7 +202,7 @@ public class TestCase {
 	@Test(priority=5, enabled=true)
 	public void Checkout() throws InterruptedException
 	{
-		WebElement checkout=driver.findElement(By.id("cart_checkout1"));
+		WebElement checkout=driver.findElement(By.xpath("//a[@id='cart_checkout1']"));
 		checkout.click();
 		WebElement confirmOrder=driver.findElement(By.id("checkout_btn"));
 		confirmOrder.click();
